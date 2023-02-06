@@ -3,7 +3,7 @@ import { Grid } from "@material-ui/core";
 import { ShortTextSharp } from "@material-ui/icons";
 
 import useStyles from './styles'
-import Product from './Product/Product'
+import Product from './ProductCard/Product'
 
 
 const Products = ({ products, onAddToCart }) =>{
