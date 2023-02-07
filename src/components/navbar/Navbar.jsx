@@ -1,6 +1,6 @@
 import React from 'react'
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography, BottomNavigation, BottomNavigationAction, useTheme, useMediaQuery } from '@material-ui/core';
-import { ShoppingCart } from '@material-ui/icons';
+import { AppBar, Toolbar, IconButton, Badge, Grid, MenuItem, Menu, Typography, BottomNavigation, BottomNavigationAction, useTheme, useMediaQuery, Paper, Icon } from '@material-ui/core';
+import { ShoppingCart, LiveHelp, Chat, House } from '@material-ui/icons';
 import { Link, useLocation } from 'react-router-dom';
 
 import logo from '../../assets/Asset7.png'
@@ -41,13 +41,26 @@ const Navbar = ({totalItems}) => {
 
   const mobileNav = () => {
     return(
-      <BottomNavigation id='devicesNav'>
-          <BottomNavigationAction component={Link} to='/' label="Shop" icon={<ShoppingCart />} />
-          <BottomNavigationAction component={Link} to='/' label="About" icon={<ShoppingCart />} />
-          <BottomNavigationAction component={Link} to='/' label="Home" icon={<img src={mobileLogo} alt='Frank Albie' />} />
-          <BottomNavigationAction component={Link} to='/' label="Contact" icon={<ShoppingCart />} />
-          <BottomNavigationAction component={Link} to='/' label="Cart" icon={<ShoppingCart />} />
-        </BottomNavigation>
+      <AppBar className={classes.bottomNav} elevation={0} position="fixed" >
+        <Grid container spacing={0} className={classes.bottomNavigation}>
+          <Grid item xs={1}>
+          <IconButton component={Link} to="/cart" aria-label="Show cart items" color="#354721"><ShoppingCart /></IconButton>
+          </Grid>
+          <Grid item xs={1}>
+          <IconButton component={Link} to="/cart" aria-label="Show cart items" color="#354721"><LiveHelp /></IconButton>
+          </Grid>
+          <Grid item xs={3}>
+        <IconButton className={classes.homeImage} component={Link} to="/cart" aria-label="Show cart items" color="#354721"><img src={mobileLogo} /></IconButton>
+          </Grid>
+          <Grid item xs={1}>
+          <IconButton component={Link} to="/cart" aria-label="Show cart items" color="#354721"><Chat /></IconButton>
+          </Grid>
+          <Grid item xs={1}>
+          <IconButton component={Link} to="/cart" aria-label="Show cart items" color="#354721"><House /></IconButton>
+          </Grid>
+        </Grid>
+      </AppBar>
+      
     )
   }
 
